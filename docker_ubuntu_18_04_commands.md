@@ -1,4 +1,4 @@
-# Ubuntu 18.04 and Docker Command Reference
+# Ubuntu 26.04 and Docker Command Reference
 
 ## System information
 
@@ -7,16 +7,15 @@ lsb_release -a
 ```
 
 ```text
-Description: Ubuntu 18.04 LTS
-Release: 18.04
-Codename: bionic
+Description: Ubuntu 26.04.1 LTS
+Release: 26.04
+Codename: resolute
 ```
 
 ## Install Docker prerequisites and packages
 
 ```bash
 apt-get update
-apt-get install openssh*
 apt-get install apt-transport-https ca-certificates curl software-properties-common
 apt install docker.io
 service docker start
@@ -27,7 +26,6 @@ apt install docker-compose
 
 ```bash
 docker --version
-docker-compose --version
 docker compose version
 ```
 
@@ -35,12 +33,6 @@ docker compose version
 
 ```bash
 apt purge docker.io
-```
-
-## Firewall
-
-```bash
-ufw disable
 ```
 
 ## List containers
@@ -98,12 +90,11 @@ docker exec -it 9b37998225b4 /bin/bash
 ## Docker Compose
 
 ```bash
-docker-compose up -d
-docker-compose down
+docker compose up -d
+docker compose down
 ```
 
 ## Operational notes
 
 - Use `sudo` or a root shell where required.
-- `ufw disable` turns off the host firewall.
 - `docker container prune` and `docker image prune -a` can permanently delete unused Docker data.
